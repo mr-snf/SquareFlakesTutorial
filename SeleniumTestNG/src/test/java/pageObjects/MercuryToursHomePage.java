@@ -28,8 +28,7 @@ public class MercuryToursHomePage {
 		btnBackHome.click();
 	}
 
-	public boolean verifyLogin() {
-		String text = labelSuccess.getText();
-		return text.equals("Login Successfully");
+	public String verifyLogin() {
+		return labelSuccess.getText();
 	}
 }

@@ -11,10 +11,13 @@ public class MercuryToursLoginPage {
 	WebElement inputUsername;
 
 	@FindBy(xpath = "//input[@name=\"password\"]")
-	WebElement inputPassword;
+	public WebElement inputPassword;
 
 	@FindBy(xpath = "//input[@name=\"submit\"]")
 	WebElement btnSubmit;
+
+	@FindBy(xpath = "/html/body/div[2]/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[1]/td[2]/font/a")
+	public WebElement linkHome;
 
 	public MercuryToursLoginPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
