@@ -1,5 +1,6 @@
 package testngDay.SeleniumTestNG;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -43,9 +44,15 @@ public class DiffDriverTest {
 //		act.click(mtl.linkHome).build().perform();
 //		act.moveByOffset(100, 0)
 //		act.dragAndDrop(mtl.linkHome, mtl.inputPassword).build().perform();
-		act.sendKeys(mtl.inputPassword, "fdsfdsfsfa");
+//		act.sendKeys(mtl.inputPassword, "fdsfdsfsfa");
 
+		Thread.sleep(2000);
 		jse = (JavascriptExecutor) driver;// typecasting
+
+		jse.executeScript("arguments[0].scrollIntoView(true);",
+				driver.findElement(By.xpath("/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[5]/td/div")));
+
+//		jse.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 5000);");
 
 		Thread.sleep(3000);
 

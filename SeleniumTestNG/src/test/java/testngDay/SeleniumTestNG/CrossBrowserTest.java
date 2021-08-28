@@ -6,9 +6,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
+
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 
 import pageObjects.MercuryToursHomePage;
 import pageObjects.MercuryToursLoginPage;
@@ -17,19 +22,23 @@ public class CrossBrowserTest {
 
 	WebDriver driver;
 	MercuryToursLoginPage mtl;
-	int browserSelect = 3;
+	int browserSelect = 1;
 	private MercuryToursHomePage mth;
+	ExtentReports extentReport;
+	ExtentTest extentTest;
 
 	@BeforeSuite
 	public void setUp() {
 
-		System.setProperty("wedriver.chrome.driver",
+		extentReport = new ExtentReports(
+				"C:\\Users\\i31335\\OneDrive - Verisk Analytics\\Documents\\selenium\\reports.html", true);
+
+		System.setProperty("webdriver.chrome.driver",
 				"C:\\Users\\i31335\\OneDrive - Verisk Analytics\\Documents\\selenium\\drivers\\chromedriver.exe");
 		System.setProperty("webdriver.gecko.driver",
 				"C:\\Users\\i31335\\OneDrive - Verisk Analytics\\Documents\\selenium\\drivers\\geckodriver.exe");
 		System.setProperty("webdriver.ie.driver",
 				"C:\\Users\\i31335\\OneDrive - Verisk Analytics\\Documents\\selenium\\drivers\\IEDriverServer.exe");
-
 	}
 
 	@BeforeMethod
@@ -57,17 +66,26 @@ public class CrossBrowserTest {
 
 	@Test
 	public void loginTest() throws InterruptedException {
+		extentTest = extentReport.startTest("Login Test", "This is a sample login");
 		mtl = new MercuryToursLoginPage(driver);
 		mtl.login("test123", "test123");
-
+		extentTest.log(LogStatus.INFO, "logged in with test123");
 		Thread.sleep(2000);
 		mth = new MercuryToursHomePage(driver);
-		Assert.assertEquals(mth.verifyLogin(), "Login Successfully");
+		Assert.assertEquals(mth.verifyLogin(), "Login Successfullgy");
+		extentTest.log(LogStatus.FAIL, "Login failed!!");
 	}
 
 	@AfterMethod
 	public void tearDown() {
+		extentReport.endTest(extentTest);
+		extentReport.flush();
+
 		driver.quit();
 	}
 
+	@AfterSuite
+	public void createReport() {
+		extentReport.close();
+	}
 }

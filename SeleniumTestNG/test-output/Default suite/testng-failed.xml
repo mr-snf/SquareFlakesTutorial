@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testngDay.SeleniumTestNG.CrossBrowserTest">
+      <class name="testngDay.SeleniumTestNG.DiffDriverTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="loginTest"/>
           <include name="setUp"/>
-          <include name="startDiffBrowser"/>
+          <include name="loginTest"/>
+          <include name="tearDown"/>
+          <include name="startBrowser"/>
         </methods>
-      </class> <!-- testngDay.SeleniumTestNG.CrossBrowserTest -->
+      </class> <!-- testngDay.SeleniumTestNG.DiffDriverTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
