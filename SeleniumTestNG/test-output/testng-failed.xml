@@ -3,14 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testngDay.SeleniumTestNG.DiffDriverTest">
+      <class name="testngDay.SeleniumTestNG.SeleniumExtentReports">
         <methods>
-          <include name="setUp"/>
-          <include name="loginTest"/>
+          <include name="createReport"/>
           <include name="tearDown"/>
           <include name="startBrowser"/>
+          <include name="setUp"/>
+          <include name="loginTest"/>
         </methods>
-      </class> <!-- testngDay.SeleniumTestNG.DiffDriverTest -->
+      </class> <!-- testngDay.SeleniumTestNG.SeleniumExtentReports -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

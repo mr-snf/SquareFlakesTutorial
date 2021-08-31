@@ -17,7 +17,7 @@ public class DiffDriverTest {
 	WebDriver driver;
 	MercuryToursLoginPage mtl;
 	MercuryToursHomePage mth;
-	JavascriptExecutor jse;
+	// JavascriptExecutor jse;
 	Actions act;
 
 	@BeforeSuite
@@ -47,12 +47,14 @@ public class DiffDriverTest {
 //		act.sendKeys(mtl.inputPassword, "fdsfdsfsfa");
 
 		Thread.sleep(2000);
-		jse = (JavascriptExecutor) driver;// typecasting
+		JavascriptExecutor jse = (JavascriptExecutor) driver;// typecasting
+
+		jse.executeScript("return document.ready;", driver.findElement(By.tagName("tbody")));
 
 		jse.executeScript("arguments[0].scrollIntoView(true);",
 				driver.findElement(By.xpath("/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[5]/td/div")));
 
-//		jse.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 5000);");
+		jse.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 5000);");
 
 		Thread.sleep(3000);
 

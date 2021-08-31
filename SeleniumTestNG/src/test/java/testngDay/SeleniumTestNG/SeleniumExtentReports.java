@@ -2,6 +2,7 @@ package testngDay.SeleniumTestNG;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -41,20 +42,22 @@ public class SeleniumExtentReports {
 	@BeforeMethod
 	public void startBrowser() {
 		driver = new ChromeDriver();
+		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		driver.get("http://demo.guru99.com/test/newtours/index.php");
+		driver.manage().window().maximize();
 	}
 
 	@Test
-	public void loginTest() throws InterruptedException {
+	public void loginTest() {
 		test = reports.startTest("Login test", "Validating login process");
 		mtl = new MercuryToursLoginPage(driver);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		test.log(LogStatus.INFO, "Logging in with test123 user");
 
 		mtl.login("test123", "test123");
 		mth = new MercuryToursHomePage(driver);
-		Thread.sleep(2000);
 
-		if (mth.verifyLogin().equals("Login Successfullygfdg")) {
+		if (mth.verifyLogin().equals("Login Successfully")) {
 			test.log(LogStatus.PASS, "Login successful");
 		} else {
 			String snapshot = capture("login");
@@ -65,6 +68,9 @@ public class SeleniumExtentReports {
 	@Test
 	public void test2() {
 		test = reports.startTest("test2");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 		test.log(LogStatus.INFO, "did nothing here");
 	}
 
