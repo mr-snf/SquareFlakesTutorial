@@ -42,13 +42,14 @@ public class MercuryToursHomePage {
 		return labelSuccess.getText();
 	}
 
-	public void clickSth() {
-		Wait<WebDriver> flWait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(30))
+	public void clickBackHome2() {
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(30))
 				.pollingEvery(Duration.ofSeconds(5)).ignoring(NoSuchElementException.class);
 
-		WebElement element = flWait.until(new Function<WebDriver, WebElement>() {
+		WebElement element = wait.until(new Function<WebDriver, WebElement>() {
 			public WebElement apply(WebDriver driver) {
-				return driver.findElement(By.id("test"));
+				return driver.findElement(By.xpath(
+						"/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr[1]/td[2]/table/tbody/tr[4]/td/a/img"));
 			}
 		});
 

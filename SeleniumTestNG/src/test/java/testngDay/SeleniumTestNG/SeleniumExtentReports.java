@@ -21,6 +21,8 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import pageObjects.MercuryToursHomePage;
 import pageObjects.MercuryToursLoginPage;
+import pageObjects.RadioAndCheckboxesPage;
+import pageObjects.SelectOptionPage;
 
 public class SeleniumExtentReports {
 
@@ -43,7 +45,7 @@ public class SeleniumExtentReports {
 	public void startBrowser() {
 		driver = new ChromeDriver();
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-		driver.get("http://demo.guru99.com/test/newtours/index.php");
+		// driver.get("http://demo.guru99.com/test/radio.html");
 		driver.manage().window().maximize();
 	}
 
@@ -66,12 +68,79 @@ public class SeleniumExtentReports {
 	}
 
 	@Test
-	public void test2() {
+	public void test2() throws InterruptedException {
 		test = reports.startTest("test2");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+		mth = new MercuryToursHomePage(driver);
+//		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+//		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 		test.log(LogStatus.INFO, "did nothing here");
+		mth.clickBackHome2();
+		Thread.sleep(2000);
+	}
+
+	@Test
+	public void test3() throws InterruptedException {
+		driver.get("http://demo.guru99.com/test/radio.html");
+
+		RadioAndCheckboxesPage rnc = new RadioAndCheckboxesPage(driver);
+//		Thread.sleep(1000);
+//		rnc.clickRadio1();
+//		Thread.sleep(1000);
+//		rnc.checkRadioSelection();
+//		Thread.sleep(1000);
+//		rnc.clickRadio2();
+//		Thread.sleep(1000);
+//		rnc.checkRadioSelection();
+//		Thread.sleep(1000);
+//		rnc.clickRadio3();
+//		Thread.sleep(1000);
+//		rnc.checkRadioSelection();
+//		Thread.sleep(1000);
+
+		System.out.println("----------------------------");
+
+		rnc.clickCheckbox1();
+		Thread.sleep(1000);
+		rnc.checkCheckboxSelection();
+		Thread.sleep(1000);
+		rnc.clickCheckbox2();
+		Thread.sleep(1000);
+		rnc.checkCheckboxSelection();
+		Thread.sleep(1000);
+		rnc.clickCheckbox3();
+		Thread.sleep(1000);
+		rnc.checkCheckboxSelection();
+		Thread.sleep(1000);
+		rnc.clickCheckbox1();
+		Thread.sleep(1000);
+		rnc.checkCheckboxSelection();
+		Thread.sleep(1000);
+		rnc.clickCheckbox2();
+		Thread.sleep(1000);
+		rnc.checkCheckboxSelection();
+		Thread.sleep(1000);
+		rnc.clickCheckbox3();
+		Thread.sleep(1000);
+		rnc.checkCheckboxSelection();
+		Thread.sleep(1000);
+	}
+
+	@Test
+	public void testParentChildre() throws InterruptedException {
+		driver.get("http://demo.guru99.com/test/radio.html");
+
+		SelectOptionPage sop = new SelectOptionPage(driver);
+		Thread.sleep(2000);
+		sop.clickSEOMenu();
+		Thread.sleep(2000);
+		sop.usePageMenus();
+		Thread.sleep(2000);
+	}
+
+	@Test
+	public void testSelectOption() {
+		driver.get("https://www.seleniumeasy.com/test/basic-select-dropdown-demo.html");
 	}
 
 	@AfterMethod

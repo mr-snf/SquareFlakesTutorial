@@ -9,7 +9,7 @@
           <include name="tearDown"/>
           <include name="startBrowser"/>
           <include name="setUp"/>
-          <include name="loginTest"/>
+          <include name="testSelectOptions"/>
         </methods>
       </class> <!-- testngDay.SeleniumTestNG.SeleniumExtentReports -->
     </classes>
