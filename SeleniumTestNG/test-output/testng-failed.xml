@@ -6,10 +6,10 @@
       <class name="testngDay.SeleniumTestNG.SeleniumExtentReports">
         <methods>
           <include name="createReport"/>
+          <include name="testParentChildre"/>
           <include name="tearDown"/>
           <include name="startBrowser"/>
           <include name="setUp"/>
-          <include name="testSelectOptions"/>
         </methods>
       </class> <!-- testngDay.SeleniumTestNG.SeleniumExtentReports -->
     </classes>

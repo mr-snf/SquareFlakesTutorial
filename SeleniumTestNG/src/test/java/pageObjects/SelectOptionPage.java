@@ -1,10 +1,12 @@
 package pageObjects;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 
 public class SelectOptionPage {
 	WebDriver driver;
@@ -22,11 +24,16 @@ public class SelectOptionPage {
 
 	public void clickSEOMenu() {
 		linkSEO.click();
+		System.out.println(menuPages.findElements(By.xpath("./li")).size()); // immediate children with li tag only
+		System.out.println(menuPages.findElements(By.xpath("./*")).size()); // all immediate child
+		menuPages.findElements(By.cssSelector("*")); // all children
+		System.out.println(menuPages.findElements(By.tagName("li")).size()); // all children with li tag only
+		System.out.println(menuPages.findElement(By.xpath(".."))); // gets parent element
 	}
 
 	public void usePageMenus() {
-		Select pageOptions = new Select(menuPages);
-		System.out.println(pageOptions.getOptions());
+		List<WebElement> menuOptions = menuPages.findElements(By.tagName("li"));
+		menuOptions.get(0).click();
 	}
 
 }

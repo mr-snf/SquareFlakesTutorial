@@ -44,7 +44,7 @@ public class SeleniumExtentReports {
 	@BeforeMethod
 	public void startBrowser() {
 		driver = new ChromeDriver();
-		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+		//driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		// driver.get("http://demo.guru99.com/test/radio.html");
 		driver.manage().window().maximize();
 	}
