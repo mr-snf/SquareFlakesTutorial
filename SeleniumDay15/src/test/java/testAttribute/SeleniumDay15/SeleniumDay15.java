@@ -1,16 +1,10 @@
 package testAttribute.SeleniumDay15;
 
-import java.time.Duration;
-import java.util.Set;
+import java.io.IOException;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
@@ -105,16 +99,31 @@ public class SeleniumDay15 {
 		driver.get("https://demoqa.com/alerts");
 		test = reports.startTest("Alerts Test", "Handling different alerts");
 		ToolsQAAlertsPage tqp = new ToolsQAAlertsPage(driver);
-//		tqp.handleAlert();
+		tqp.handleAlert();
 //		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
-//		tqp.handleTimedAlert();
+		tqp.handleTimedAlert();
 //		wait.until(ExpectedConditions.alertIsPresent());
 //		driver.switchTo().alert().accept();
 
-//		tqp.handleConfirmAlert();
-		tqp.handlePromptAlert();
-		Thread.sleep(3000);
+		tqp.handleConfirmAlert();
+//		tqp.handlePromptAlert();
+		Thread.sleep(2000);
+
+	}
+
+	@Test
+	public void windowsAuthTest() throws InterruptedException, IOException {
+		driver.get("https://the-internet.herokuapp.com/basic_auth");
+		// https://admin:admin@the-internet.herokuapp.com/basic_auth
+		test = reports.startTest("Windows auth test", "Handling windows authentication");
+
+		Thread.sleep(2000);
+		Runtime.getRuntime()
+				.exec("C:\\Users\\i31335\\OneDrive - Verisk Analytics\\Documents\\selenium\\autoIT\\autoIT.exe");
+//		driver.switchTo().alert().sendKeys("admin" + Keys.TAB + "admin");
+//		driver.switchTo().alert().accept();
+		Thread.sleep(5000);
 	}
 
 	@AfterMethod

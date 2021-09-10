@@ -9,7 +9,7 @@
           <include name="clearSession"/>
           <include name="setupBrowser"/>
           <include name="setUp"/>
-          <include name="handlingAlertsTest"/>
+          <include name="windowsAuthTest"/>
         </methods>
       </class> <!-- testAttribute.SeleniumDay15.SeleniumDay15 -->
     </classes>
