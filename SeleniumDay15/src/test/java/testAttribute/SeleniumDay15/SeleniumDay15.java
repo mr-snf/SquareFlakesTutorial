@@ -2,6 +2,7 @@ package testAttribute.SeleniumDay15;
 
 import java.io.IOException;
 
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -99,14 +100,18 @@ public class SeleniumDay15 {
 		driver.get("https://demoqa.com/alerts");
 		test = reports.startTest("Alerts Test", "Handling different alerts");
 		ToolsQAAlertsPage tqp = new ToolsQAAlertsPage(driver);
-		tqp.handleAlert();
+//		tqp.handleAlert();
 //		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
-		tqp.handleTimedAlert();
+		try {
+			tqp.handleTimedAlert();
+		} catch (TimeoutException e) {
+			test.log(LogStatus.FAIL, "Alert didn't show!!");
+		}
 //		wait.until(ExpectedConditions.alertIsPresent());
 //		driver.switchTo().alert().accept();
 
-		tqp.handleConfirmAlert();
+//		tqp.handleConfirmAlert();
 //		tqp.handlePromptAlert();
 		Thread.sleep(2000);
 

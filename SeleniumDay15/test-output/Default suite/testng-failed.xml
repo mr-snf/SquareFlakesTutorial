@@ -3,15 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testAttribute.SeleniumDay15.SeleniumDay15">
+      <class name="testAttribute.SeleniumDay15.BrowserCaps">
         <methods>
-          <include name="tearDown"/>
-          <include name="clearSession"/>
-          <include name="setupBrowser"/>
-          <include name="setUp"/>
-          <include name="windowsAuthTest"/>
+          <include name="afterMethod"/>
+          <include name="afterSuite"/>
+          <include name="f"/>
+          <include name="beforeSuite"/>
+          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- testAttribute.SeleniumDay15.SeleniumDay15 -->
+      </class> <!-- testAttribute.SeleniumDay15.BrowserCaps -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

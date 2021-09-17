@@ -44,7 +44,7 @@ public class SeleniumExtentReports {
 	@BeforeMethod
 	public void startBrowser() {
 		driver = new ChromeDriver();
-		//driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+		// driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		// driver.get("http://demo.guru99.com/test/radio.html");
 		driver.manage().window().maximize();
 	}
@@ -70,6 +70,7 @@ public class SeleniumExtentReports {
 	@Test
 	public void test2() throws InterruptedException {
 		test = reports.startTest("test2");
+		driver.get("http://demo.guru99.com/test/newtours/index.php");
 		mth = new MercuryToursHomePage(driver);
 //		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
 //		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

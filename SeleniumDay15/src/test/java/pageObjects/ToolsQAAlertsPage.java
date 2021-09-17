@@ -47,9 +47,9 @@ public class ToolsQAAlertsPage {
 
 	public void handleTimedAlert() throws InterruptedException {
 		btntimerAlert.click();
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(4));
 		wait.until(ExpectedConditions.alertIsPresent());
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 		driver.switchTo().alert().accept();
 		// driver.switchTo().defaultContent();
 		Thread.sleep(2000);

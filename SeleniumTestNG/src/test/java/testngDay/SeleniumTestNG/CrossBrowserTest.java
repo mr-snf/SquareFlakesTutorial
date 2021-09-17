@@ -3,7 +3,11 @@ package testngDay.SeleniumTestNG;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.ie.InternetExplorerOptions;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -13,6 +17,7 @@ import org.testng.annotations.Test;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogLevel;
 import com.relevantcodes.extentreports.LogStatus;
 
 import pageObjects.MercuryToursHomePage;
@@ -45,15 +50,23 @@ public class CrossBrowserTest {
 	public void startDiffBrowser() {
 		switch (browserSelect) {
 		case 1:
+			DesiredCapabilities chromeCap = DesiredCapabilities.chrome();
 			driver = new ChromeDriver();
 			break;
 
 		case 2:
-			driver = new FirefoxDriver();
+			DesiredCapabilities firefoxCap = DesiredCapabilities.firefox();
+			FirefoxOptions fireOpt = new FirefoxOptions();
+			fireOpt.setHeadless(true);
+			fireOpt.addPreference(CapabilityType.ACCEPT_SSL_CERTS, true);
+			driver = new FirefoxDriver(fireOpt);
 			break;
 
 		case 3:
-			driver = new InternetExplorerDriver();
+			DesiredCapabilities ieCap = DesiredCapabilities.internetExplorer();
+			ieCap.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+			InternetExplorerOptions ieOpt = new InternetExplorerOptions();
+			driver = new InternetExplorerDriver(ieCap);
 			break;
 
 		default:
@@ -72,7 +85,7 @@ public class CrossBrowserTest {
 		extentTest.log(LogStatus.INFO, "logged in with test123");
 		Thread.sleep(2000);
 		mth = new MercuryToursHomePage(driver);
-		Assert.assertEquals(mth.verifyLogin(), "Login Successfullgy");
+		Assert.assertEquals(mth.verifyLogin(), "Login Successfully");
 		extentTest.log(LogStatus.FAIL, "Login failed!!");
 	}
 
