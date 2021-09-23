@@ -1,33 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="11606" started-at="2021-09-17T07:04:18 NPT" finished-at="2021-09-17T07:04:30 NPT">
+  <suite name="Suite" duration-ms="47431" started-at="2021-09-23T06:45:58 NPT" finished-at="2021-09-23T06:46:45 NPT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="11606" started-at="2021-09-17T07:04:18 NPT" finished-at="2021-09-17T07:04:30 NPT">
-      <class name="testAttribute.SeleniumDay15.BrowserCaps">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:testAttribute.SeleniumDay15.BrowserCaps@37374a5e]" name="beforeSuite" is-config="true" duration-ms="133" started-at="2021-09-17T07:04:18 NPT" finished-at="2021-09-17T07:04:18 NPT">
+    <test name="Test" duration-ms="47431" started-at="2021-09-23T06:45:58 NPT" finished-at="2021-09-23T06:46:45 NPT">
+      <class name="testAttribute.SeleniumDay15.SeleniumDay15">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testAttribute.SeleniumDay15.SeleniumDay15@4671e53b]" name="setUp" is-config="true" duration-ms="121" started-at="2021-09-23T06:45:57 NPT" finished-at="2021-09-23T06:45:58 NPT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testAttribute.SeleniumDay15.BrowserCaps@37374a5e]" name="beforeMethod" is-config="true" duration-ms="4049" started-at="2021-09-17T07:04:18 NPT" finished-at="2021-09-17T07:04:22 NPT">
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="setupBrowser()[pri:0, instance:testAttribute.SeleniumDay15.SeleniumDay15@4671e53b]" name="setupBrowser" is-config="true" duration-ms="4276" started-at="2021-09-23T06:45:58 NPT" finished-at="2021-09-23T06:46:02 NPT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="f()[pri:0, instance:testAttribute.SeleniumDay15.BrowserCaps@37374a5e]" name="f" duration-ms="6631" started-at="2021-09-17T07:04:22 NPT" finished-at="2021-09-17T07:04:29 NPT">
+        </test-method> <!-- setupBrowser -->
+        <test-method status="PASS" signature="attributeTest()[pri:0, instance:testAttribute.SeleniumDay15.SeleniumDay15@4671e53b]" name="attributeTest" duration-ms="13854" started-at="2021-09-23T06:46:02 NPT" finished-at="2021-09-23T06:46:16 NPT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- f -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:testAttribute.SeleniumDay15.BrowserCaps@37374a5e]" name="afterMethod" is-config="true" duration-ms="899" started-at="2021-09-17T07:04:29 NPT" finished-at="2021-09-17T07:04:30 NPT">
+        </test-method> <!-- attributeTest -->
+        <test-method status="PASS" signature="clearSession()[pri:0, instance:testAttribute.SeleniumDay15.SeleniumDay15@4671e53b]" name="clearSession" is-config="true" duration-ms="898" started-at="2021-09-23T06:46:16 NPT" finished-at="2021-09-23T06:46:17 NPT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:testAttribute.SeleniumDay15.BrowserCaps@37374a5e]" name="afterSuite" is-config="true" duration-ms="35" started-at="2021-09-17T07:04:30 NPT" finished-at="2021-09-17T07:04:30 NPT">
+        </test-method> <!-- clearSession -->
+        <test-method status="PASS" signature="setupBrowser()[pri:0, instance:testAttribute.SeleniumDay15.SeleniumDay15@4671e53b]" name="setupBrowser" is-config="true" duration-ms="1290" started-at="2021-09-23T06:46:17 NPT" finished-at="2021-09-23T06:46:18 NPT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterSuite -->
-      </class> <!-- testAttribute.SeleniumDay15.BrowserCaps -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- setupBrowser -->
+        <test-method status="PASS" signature="handlingAlertsTest()[pri:0, instance:testAttribute.SeleniumDay15.SeleniumDay15@4671e53b]" name="handlingAlertsTest" duration-ms="14981" started-at="2021-09-23T06:46:18 NPT" finished-at="2021-09-23T06:46:33 NPT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handlingAlertsTest -->
+        <test-method status="PASS" signature="clearSession()[pri:0, instance:testAttribute.SeleniumDay15.SeleniumDay15@4671e53b]" name="clearSession" is-config="true" duration-ms="678" started-at="2021-09-23T06:46:33 NPT" finished-at="2021-09-23T06:46:34 NPT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearSession -->
+        <test-method status="PASS" signature="setupBrowser()[pri:0, instance:testAttribute.SeleniumDay15.SeleniumDay15@4671e53b]" name="setupBrowser" is-config="true" duration-ms="1277" started-at="2021-09-23T06:46:34 NPT" finished-at="2021-09-23T06:46:35 NPT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupBrowser -->
+        <test-method status="PASS" signature="windowsAuthTest()[pri:0, instance:testAttribute.SeleniumDay15.SeleniumDay15@4671e53b]" name="windowsAuthTest" duration-ms="9443" started-at="2021-09-23T06:46:35 NPT" finished-at="2021-09-23T06:46:44 NPT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- windowsAuthTest -->
+        <test-method status="PASS" signature="clearSession()[pri:0, instance:testAttribute.SeleniumDay15.SeleniumDay15@4671e53b]" name="clearSession" is-config="true" duration-ms="701" started-at="2021-09-23T06:46:44 NPT" finished-at="2021-09-23T06:46:45 NPT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearSession -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testAttribute.SeleniumDay15.SeleniumDay15@4671e53b]" name="tearDown" is-config="true" duration-ms="40" started-at="2021-09-23T06:46:45 NPT" finished-at="2021-09-23T06:46:45 NPT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testAttribute.SeleniumDay15.SeleniumDay15 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
