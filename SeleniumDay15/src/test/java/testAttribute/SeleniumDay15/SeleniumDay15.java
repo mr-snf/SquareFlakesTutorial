@@ -1,5 +1,9 @@
 package testAttribute.SeleniumDay15;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 
 import org.openqa.selenium.TimeoutException;
@@ -118,14 +122,24 @@ public class SeleniumDay15 {
 	}
 
 	@Test
-	public void windowsAuthTest() throws InterruptedException, IOException {
+	public void windowsAuthTest() throws InterruptedException, IOException, AWTException {
 		driver.get("https://the-internet.herokuapp.com/basic_auth");
 		// https://admin:admin@the-internet.herokuapp.com/basic_auth
 		test = reports.startTest("Windows auth test", "Handling windows authentication");
 
 		Thread.sleep(2000);
-		Runtime.getRuntime()
-				.exec("C:\\Users\\i31335\\OneDrive - Verisk Analytics\\Documents\\selenium\\autoIT\\autoIT.exe");
+
+		Robot robo = new Robot();
+		robo.mouseMove(950, 160);
+		robo.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+		robo.keyPress(KeyEvent.VK_A);
+		robo.mouseMove(950, 200);
+		robo.keyPress(KeyEvent.VK_4);
+		robo.mouseMove(1050, 250);
+		
+		
+//		Runtime.getRuntime()
+//				.exec("C:\\Users\\i31335\\OneDrive - Verisk Analytics\\Documents\\selenium\\autoIT\\autoIT.exe");
 //		driver.switchTo().alert().sendKeys("admin" + Keys.TAB + "admin");
 //		driver.switchTo().alert().accept();
 		Thread.sleep(5000);

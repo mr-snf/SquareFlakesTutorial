@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<parameter name="url" value="http://google.com"></parameter>
+	<parameter name="searchText" value="apple">
+	</parameter>
+	<test thread-count="5" name="Test">
+		<parameter name="searchText" value="orange">
+		</parameter>
+		<parameter name="searchText" value="blueberry">
+		</parameter>
+		<classes>
+			<class name="downAndUp.SeleniumDay26.DataDivenTestPractice" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
+<testng-results skipped="0" failed="0" ignored="5" total="6" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="18296" started-at="2021-09-23T07:23:56 NPT" finished-at="2021-09-23T07:24:15 NPT">
+  <suite name="Default suite" duration-ms="11002" started-at="2021-09-28T07:21:56 NPT" finished-at="2021-09-28T07:22:07 NPT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="18296" started-at="2021-09-23T07:23:56 NPT" finished-at="2021-09-23T07:24:15 NPT">
-      <class name="downAndUp.SeleniumDay26.UploadAndDownload">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:downAndUp.SeleniumDay26.UploadAndDownload@37374a5e]" name="beforeSuite" is-config="true" duration-ms="143" started-at="2021-09-23T07:23:56 NPT" finished-at="2021-09-23T07:23:56 NPT">
+    <test name="Default test" duration-ms="11002" started-at="2021-09-28T07:21:56 NPT" finished-at="2021-09-28T07:22:07 NPT">
+      <class name="downAndUp.SeleniumDay26.DataDivenTestPractice">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:downAndUp.SeleniumDay26.DataDivenTestPractice@e50a6f6]" name="beforeSuite" is-config="true" duration-ms="171" started-at="2021-09-28T07:21:55 NPT" finished-at="2021-09-28T07:21:56 NPT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:downAndUp.SeleniumDay26.UploadAndDownload@37374a5e]" name="beforeMethod" is-config="true" duration-ms="4637" started-at="2021-09-23T07:23:57 NPT" finished-at="2021-09-23T07:24:01 NPT">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:downAndUp.SeleniumDay26.DataDivenTestPractice@e50a6f6]" name="beforeMethod" is-config="true" duration-ms="2594" started-at="2021-09-28T07:21:56 NPT" finished-at="2021-09-28T07:21:58 NPT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="fileUploadTest()[pri:0, instance:downAndUp.SeleniumDay26.UploadAndDownload@37374a5e]" name="fileUploadTest" duration-ms="12645" started-at="2021-09-23T07:24:01 NPT" finished-at="2021-09-23T07:24:14 NPT">
+        <test-method status="PASS" signature="writeToExcel()[pri:0, instance:downAndUp.SeleniumDay26.DataDivenTestPractice@e50a6f6]" name="writeToExcel" duration-ms="7469" started-at="2021-09-28T07:21:58 NPT" finished-at="2021-09-28T07:22:06 NPT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fileUploadTest -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:downAndUp.SeleniumDay26.UploadAndDownload@37374a5e]" name="afterMethod" is-config="true" duration-ms="982" started-at="2021-09-23T07:24:14 NPT" finished-at="2021-09-23T07:24:15 NPT">
+        </test-method> <!-- writeToExcel -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:downAndUp.SeleniumDay26.DataDivenTestPractice@e50a6f6]" name="afterMethod" is-config="true" duration-ms="905" started-at="2021-09-28T07:22:06 NPT" finished-at="2021-09-28T07:22:07 NPT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:downAndUp.SeleniumDay26.UploadAndDownload@37374a5e]" name="afterSuite" is-config="true" duration-ms="39" started-at="2021-09-23T07:24:15 NPT" finished-at="2021-09-23T07:24:15 NPT">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:downAndUp.SeleniumDay26.DataDivenTestPractice@e50a6f6]" name="afterSuite" is-config="true" duration-ms="38" started-at="2021-09-28T07:22:07 NPT" finished-at="2021-09-28T07:22:07 NPT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- downAndUp.SeleniumDay26.UploadAndDownload -->
+      </class> <!-- downAndUp.SeleniumDay26.DataDivenTestPractice -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
